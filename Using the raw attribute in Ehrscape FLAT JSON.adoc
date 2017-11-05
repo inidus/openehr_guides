@@ -15,7 +15,8 @@ endif::[]
 == Overview
 Whilst the Ehrscape `FLAT\STRUCTURED JSON` formats allow deeply nested openEHR datatypes to be simply populated, not all of the low-level attributes of every openEHR datatype are exposed in `FLAT/STRUCTURED JSON`.
 
-As an example, the [openEHR `DV_QUANTITY` datatype]http://www.openehr.org/releases/trunk/UML/diagrams/diagram_Diagrams___18_1_83e026d_1433773265063_214646_8610.png]
+As an example, the http://www.openehr.org/releases/trunk/UML/diagrams/diagram_Diagrams___18_1_83e026d_1433773265063_214646_8610.png[openEHR DV_QUANTITY datatype]
+
 
 has the following attributes..
 
