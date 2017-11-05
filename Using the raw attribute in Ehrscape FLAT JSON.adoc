@@ -66,7 +66,7 @@ The following example demonstrates a fully-populated `DV_QUANTITY` element, incl
 == Fully populated RAW JSON DV_QUANTITY snippet
 [source,json]
 ----
-"value": {
+{
     "@class": "DV_QUANTITY",
     "normal_range": {
         "@class": "DV_INTERVAL",
