@@ -2,6 +2,16 @@
 Ian McNicoll <ian@inidus.com>
 v1.0.0, 5-Nov-2017
 
+// Add support for Github icons
+
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
 == Overview
 Whilst the Ehrscape `FLAT\STRUCTURED JSON` formats allow deeply nested openEHR datatypes to be simply populated, not all of the low-level attributes of every openEHR datatype are exposed in `FLAT/STRUCTURED JSON`.
 
