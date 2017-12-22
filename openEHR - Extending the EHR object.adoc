@@ -9,7 +9,7 @@ ifdef::env-github[]
 :caution-caption: :fire:
 :warning-caption: :warning:
 endif::[]
-:source-highlighter: pygments
+//:source-highlighter: pygments
 
 == The openEHR `ehr` object
 
