@@ -32,8 +32,8 @@ This example could be used to add two local hospital numbers to the `ehr.ehr_sta
 NOTE: This example applies to the Think!Ehr and EtherCis CDRs which recognise the Marand RAW JSON format.
 Other CDRs may have a slightly different approach.
 
-[source, json]
-----
+//[source, json]
+```json
 "otherDetails": {
   "@class": "ITEM_TREE",
   "name": {
@@ -92,7 +92,8 @@ Other CDRs may have a slightly different approach.
     }
   ]
 },
-----
+```
+//----
 
 === Use B - Carrying per-patient 'anonymised demographics'
 
