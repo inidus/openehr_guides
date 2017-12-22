@@ -1,4 +1,4 @@
-== Extending the openEHR `ehr` object with other_details
+== Extending the openEHR `ehr` object with `ehr_status.other_details`
 Ian McNicoll <ian@inidus.com>
 v1.0.0, 22-Dec-2017
 
@@ -9,7 +9,6 @@ ifdef::env-github[]
 :caution-caption: :fire:
 :warning-caption: :warning:
 endif::[]
-//:source-highlighter: pygments
 
 == The openEHR `ehr` object
 
@@ -35,7 +34,6 @@ Other CDRs may have a slightly different approach.
 
 [source, json]
 ----
-
 "otherDetails": {
   "@class": "ITEM_TREE",
   "name": {
