@@ -525,3 +525,37 @@ An alternative approach is to create a dummy openEHR Composition Template which 
 This template can then be used to generate dummy composition example via the Ehrscape `GET composition example` call and converted to RAW JSON. The resulting structure can then be cut and pasted out of the Composition instance and grafted into the `ehr_status` json object.
 
 Quite a roundabout exercise but generally only needs to be done once for each CDR!!
+
+
+== How do I query data in the `other_details` structure?
+
+The instance data in the `ehr.ehr_status_other_details` structure is regular openEHR data and can be queryed via openEHR 'AQL' using full path to the data required.
+
+AQL Example:: This example retrieves the ehr_id for given local MRN and type.
+
+NOTE:: The Select clauses for localId and localIdType are not strictly necessary
+[source, sql]
+----
+select e/ehr_id/value as ehrId,
+  e/ehr_status/other_details/items[openEHR-EHR-CLUSTER.person_identifiable_parent.v0]/items[at0001]/value/id as localId,
+  e/ehr_status/other_details/items[openEHR-EHR-CLUSTER.person_identifiable_parent.v0]/items[at0001]/value/type as localIdType
+from EHR e
+WHERE
+ e/ehr_status/other_details/items[openEHR-EHR-CLUSTER.person_identifiable_parent.v0]/items[at0001]/value/id = 'MRN 12342345'
+AND
+ e/ehr_status/other_details/items[openEHR-EHR-CLUSTER.person_identifiable_parent.v0]/items[at0001]/value/type = 'GOSH Annex MRN'
+----
+
+will return
+
+[source, json]
+----
+{"resultSet": [
+       {
+           "localIdType": "GOSH ANNEX MRN",
+           "ehrId": "b0397da7-9240-4ca2-a76c-dcbeecd93921",
+           "localId": "MRN 12342345"
+       }
+]
+}
+----
