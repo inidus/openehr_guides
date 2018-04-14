@@ -50,6 +50,74 @@ the snomed-version specified.
 * `99` (Not Known) => `..|terminology": "SNOMED-NK"`
 
 
+== Pattern: `topography-icd`
+
+[source,xml]
+----
+<gelCAN:topography>
+ <gelCAN:topography-icd>C00.9</gelCAN:topography-icd>
+</gelCAN:topography>
+----
+
+[source,json]
+----
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/topography|code": "C00.9",
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/topography|value": "C00.9",
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/topography|terminology": "ICD-O-3",
+----
+
+== Pattern: `topography-snomed-ct`
+
+[source,xml]
+----
+<gelCAN:topography>
+ <gelCAN:topography-snomed-ct>891345</gelCAN:topography-snomed-ct>
+</gelCAN:topography>
+----
+
+[source,json]
+----
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/topography|code": "891345",
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/topography|value": "891345",
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/topography|terminology": "SNOMED-CT",
+----
+
+== Pattern: `topography-snomed-rt`
+
+[source,xml]
+----
+<gelCAN:topography>
+ <gelCAN:topography-snomed-ct>891345</gelCAN:topography-snomed-rt>
+</gelCAN:topography>
+----
+
+[source,json]
+----
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/topography|code": "891345",
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/topography|value": "891345",
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/topography|terminology": "SNOMED-RT",
+----
+
+
+
+== Pattern: `topography-snomed` (01 -SNOMED 2)
+[source,xml]
+----
+<gelCAN:topography>
+  <gelCAN:topography-snomed>tf1qYs</gelCAN:topography-snomed>
+    <gelCAN:snomed-version>01</gelCAN:snomed-version>
+  </gelCAN:topography-snomed>
+</gelCAN:topography>
+----
+
+FLATJSON::
+[source,json]
+----
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/topography|code": "tf1qYs",
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/topography|value": "tf1qYs",
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/topography|terminology": "SNM2",
+----
+
 == Pattern: `morphology-icd`
 
 [source,xml]
@@ -67,21 +135,6 @@ Flat JSON:
  "gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/morphology:0|terminology": "ICD-O-3",
 ----
 
-== Pattern: `topography-icd`
-
-[source,xml]
-----
-<gelCAN:topography>
- <gelCAN:topography-icd>C00.9</gelCAN:topography-icd>
-</gelCAN:topography>
-----
-
-[source,json]
-----
-"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/topography|code": "C00.9",
-"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/topography|value": "C00.9",
-"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/topography|terminology": "ICD-O-3",
-----
 
 == Pattern: `morphology-snomed` (SNOMED Not Known)
 
@@ -101,26 +154,64 @@ FLAT JSON:
 "gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/morphology:16|terminology": "SNOMED-NK",
 ----
 
-NB. The value of 'terminology' will depends on snomed-version - see
+NB. The value of 'terminology' will depend on snomed-version - see
 mappings above.
 
-== Pattern: `topography-snomed` (01 -SNOMED 2)
+== Pattern: `morphology-snomed` (SNOMED RT)
+
 [source,xml]
 ----
-<gelCAN:topography>
-  <gelCAN:topography-snomed>tf1qYs</gelCAN:topography-snomed>
-    <gelCAN:snomed-version>01</gelCAN:snomed-version>
-  </gelCAN:topography-snomed>
-</gelCAN:topography>
+<gelCAN:morphology-snomed>
+ <gelCAN:morphology-snomed>M80203</gelCAN:morphology-snomed>
+ <gelCAN:snomed-version>4</gelCAN:snomed-version>
+</gelCAN:morphology-snomed>
 ----
 
-FLATJSON::
+FLAT JSON:
 [source,json]
 ----
-"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/topography|code": "tf1qYs",
-"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/topography|value": "tf1qYs",
-"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/topography|terminology": "SNM2",
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/morphology:16|code": "CEpqB8",
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/morphology:16|value": "CEpqB8",
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/morphology:16|terminology": "SNOMED-RT",
 ----
+
+NB. The value of 'terminology' will depend on snomed-version - see
+mappings above.
+
+== Pattern: `morphology-snomed-ct` (SNOMED CT)
+
+[source,xml]
+----
+<gelCAN:morphology>
+  <gelCAN:morphology-snomed-ct>M80203</gelCAN:morphology-snomed-ct>
+</gelCAN:morphology>
+----
+
+FLAT JSON:
+[source,json]
+----
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/morphology:16|code": "828978",
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/morphology:16|value": "828978",
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/morphology:16|terminology": "SNOMED-CT",
+----
+
+== Pattern: `morphology-snomed-rt` (SNOMED RT)
+
+[source,xml]
+----
+ <gelCAN:morphology>
+   <gelCAN:morphology-snomed-rt>M80203</gelCAN:morphology-snomed-rt>
+ </gelCAN:morphology>
+----
+
+FLAT JSON:
+[source,json]
+----
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/morphology:16|code": "CEpqB8",
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/morphology:16|value": "CEpqB8",
+"gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/morphology:16|terminology": "SNOMED-RT",
+----
+
 
 == Pattern: `diagnosis-icd`
 
