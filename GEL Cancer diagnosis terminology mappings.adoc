@@ -32,8 +32,14 @@ e.g as in ...
 
 `gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/morphology:0|terminology": "ICD-O-3",`
 
-- `morphology-icd` => `...|terminology": "ICD-O-3"`
-- `topography-icd` => `...|terminology": "ICD-O-3"`
+- `morphology-icd`      => `...|terminology": "ICD-O-3"`
+- `morphology-snomedct` => `...|terminology": "SNOMED-CT"`
+- `morphology-snomedrt` => `...|terminology": "SNOMED-RT"`
+
+- `topography-icd`      => `...|terminology": "ICD-O-3"`
+- `topography-snomedct` => `...|terminology": "SNOMED-CT"`
+- `topography-snomedrt` => `...|terminology": "SNOMED-RT"`
+-
 - `diagnosis-icd` =>  `...|terminology": "ICD-10"`
 - `diagnosis-snomed-ct` => `...|terminology":"SNOMED-CT"`
 
@@ -66,12 +72,12 @@ the snomed-version specified.
 "gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/topography|terminology": "ICD-O-3",
 ----
 
-== Pattern: `topography-snomed-ct`
+== Pattern: `topography-snomedct`
 
 [source,xml]
 ----
 <gelCAN:topography>
- <gelCAN:topography-snomed-ct>891345</gelCAN:topography-snomed-ct>
+ <gelCAN:topography-snomedct>891345</gelCAN:topography-snomedct>
 </gelCAN:topography>
 ----
 
@@ -82,12 +88,12 @@ the snomed-version specified.
 "gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/topography|terminology": "SNOMED-CT",
 ----
 
-== Pattern: `topography-snomed-rt`
+== Pattern: `topography-snomedrt`
 
 [source,xml]
 ----
 <gelCAN:topography>
- <gelCAN:topography-snomed-ct>891345</gelCAN:topography-snomed-rt>
+ <gelCAN:topography-snomedrt>891345</gelCAN:topography-snomedrt>
 </gelCAN:topography>
 ----
 
@@ -178,12 +184,12 @@ FLAT JSON:
 NB. The value of 'terminology' will depend on snomed-version - see
 mappings above.
 
-== Pattern: `morphology-snomed-ct` (SNOMED CT)
+== Pattern: `morphology-snomedct` (SNOMED CT)
 
 [source,xml]
 ----
 <gelCAN:morphology>
-  <gelCAN:morphology-snomed-ct>M80203</gelCAN:morphology-snomed-ct>
+  <gelCAN:morphology-snomedct>M80203</gelCAN:morphology-snomedct>
 </gelCAN:morphology>
 ----
 
@@ -195,12 +201,12 @@ FLAT JSON:
 "gel_cancer_diagnosis/problem_diagnosis:0/cancer_diagnosis/morphology:16|terminology": "SNOMED-CT",
 ----
 
-== Pattern: `morphology-snomed-rt` (SNOMED RT)
+== Pattern: `morphology-snomedrt` (SNOMED RT)
 
 [source,xml]
 ----
  <gelCAN:morphology>
-   <gelCAN:morphology-snomed-rt>M80203</gelCAN:morphology-snomed-rt>
+   <gelCAN:morphology-snomedrt>M80203</gelCAN:morphology-snomedrt>
  </gelCAN:morphology>
 ----
 
