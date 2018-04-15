@@ -1,6 +1,6 @@
 = Infoflex XML to openEHR diagnosis, morphology and topography mappings
 Ian McNicoll <ian@inidus.com>
-v1.1.0, 5-Nov-2017
+v1.1.0, 15-April-2018
 
 // Add support for Github icons
 ifdef::env-github[]
